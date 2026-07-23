@@ -75,5 +75,13 @@ def set_webhook():
     url = request.args.get("url")
     if not url:
         return "Need url param"
-    application.bot.set_webhook(url + "/api/bot")
-    return "Webhook set"
+    try:
+        application.bot.set_webhook(url + "/api/bot")
+        return "Webhook set"
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+# فقط برای تست
+@app.route("/api/ping")
+def ping():
+    return "pong"
