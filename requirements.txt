@@ -3,3 +3,4 @@ requests
 python-dotenv
 jdatetime
 flask==3.0.0
+supabase
